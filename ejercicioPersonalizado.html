@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="Author" content="Angel Alberto May Catzin">
+    <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Input & JS">
+    <meta name="Keys" content="JS">
+    <title>JS-Syntax Basics & Types</title>
+    <style>
+h1{
+  text-align: center;
+  font-weight: 200;
+  font-size: 70px;
+  text-transform: uppercase;
+  border-top: 5px solid;
+}
+h2{
+  text-align: center;
+  font-weight: 30;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+form{
+    background-color: palevioletred;
+    padding: 10px;
+    
+    text-align: center;
+    margin-left: 491px ;
+    margin-right: 491px;
+           
+    }
+input{       
+    text-align: center;
+    background-color: blanchedalmond;
+    margin: 25px;
+    padding: 10px 10px;
+    background-color: chartreuse;
+    color:red;
+    font-size: 16px ;
+    text-align: center;
+    border: 5px solid;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    outline: aqua;    
+    
+    }
+
+body{
+  background-color: mediumorchid;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 45px ;
+  font-weight: 1000;
+}
+
+img{
+  height: 500px;
+  border-radius: 220%;
+  margin-left:245px;
+  margin-right: 245px;
+}
+
+ </style>
+
+</head>
+
+<body>
+    <h1>Muscle Cars</h1>
+    <h2>
+        ¿Conoces el siguiente Muscle Car?
+    </h2>
+    <img src="ejercicio1.jpg">
+
+    <form>    
+        Nombre del vehiculo:
+        <input type="text" id="nombre" size="20" maxlength = " 30 ">
+        <br><br>
+        <input type="button" value="Validar" onclick="verificName(this.form);">
+        <p id="Mensaje"><strong></strong></p>
+        
+     </form>
+    <script>
+        //Función para verificar nombre
+        const descriptionCar = ['Ford Mustang 2020', 'Ford','2020'];
+        function verificName(form){
+            let nombre= form.elements["nombre"].value;
+            nombre.toLowerCase();
+            if(nombre=='ford mustang'||nombre=='ford mustang 2020'||nombre=='mustang'){
+                document.getElementById("Mensaje").innerHTML='El nombre es correcto';
+                document.getElementById("Mensaje").innerHTML='El nombre del Muscle Car es: '+
+                descriptionCar[0]+ ' de la marca '+descriptionCar[1]+' del año '+descriptionCar[2];
+               
+            }else{
+                document.getElementById("Mensaje").innerHTML='El nombre es incorrecto. Vuelve a intentarlo';
+            }
+            form.reset();
+
+
+        }//Fin de la función
+    </script>
+        
+  
+
+</body>
+
+</html>
